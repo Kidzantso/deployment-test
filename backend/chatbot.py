@@ -15,7 +15,7 @@ class LLMChatbot:
     def __post_init__(self) -> None:
         load_dotenv()
         api_key = os.getenv("OPENAI_API_KEY")
-        if not api_key:
+        if not api_key or api_key == "your_openai_api_key_here":
             raise ValueError(
                 "OPENAI_API_KEY is missing. Add it to a local .env file before running the app."
             )
